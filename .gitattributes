@@ -1,4 +1,5 @@
 *.cpp linguist-detectable=true
+*.cpp crlf diff
 *.py linguist-detectable=true
 *.js linguist-detectable=true
 *.html linguist-detectable=false
