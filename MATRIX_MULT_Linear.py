@@ -7,8 +7,6 @@
 import numpy as np
 import sys
 
-sys.path.insert(0, 'C:\\Users\\ARMEN\\Desktop\\Algorithms')
-
 numRows = 16
 numColumns = 16
 numOfOperations = 0
@@ -17,16 +15,13 @@ if(numRows == numColumns):
 else:
     print('Not a square matrix')
     
-#matrixA = [[1]*numColumns for row in range(numRows)]
-#matrixB = [[2]*numColumns for row in range(numRows)]
-#matrixC = [[0]*numColumns for row in range(numRows)]
-#matrixNP = np.zeros((numRows,numColumns))
     
 matrixA = np.zeros((numRows, numColumns))
 matrixB = np.zeros((numRows, numColumns))
 matrixC = np.zeros((numRows, numColumns))     
 
 count = 0
+
 for i in range(numRows):
     for j in range(numRows):
         count += 1
