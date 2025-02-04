@@ -4,48 +4,43 @@
 # ----- Running time T(n) =                     ------- #
 # ----------------------------------------------------- #
 
-import sys
+import time
 import numpy as np
 
-numRows = 16
-numColumns = 16
-numOfOperations = 0
-if numRows == numColumns:
-    matrixSize = numRows
-else:
-    print("Not a square matrix")
+
+def square_matrix_linear_multiplication(matrix_a, matrix_b):
+    matrix_size = len(matrix_a)
+    matrix_c = np.zeros((matrix_size, matrix_size))
+
+    for i in range(matrix_size):
+        for j in range(matrix_size):
+            matrix_c[i][j] = 0
+            for k in range(matrix_size):
+                matrix_c[i][j] += matrix_a[i][k] * matrix_b[k][j]
+    return matrix_c
 
 
-matrixA = np.zeros((numRows, numColumns))
-matrixB = np.zeros((numRows, numColumns))
-matrixC = np.zeros((numRows, numColumns))
+if __name__ == "__main__":
+    matrix_size = 32
+    num_rows = matrix_size
+    num_columns = matrix_size
 
-count = 0
+    matrix_a = np.zeros((num_rows, num_columns))
+    matrix_b = np.zeros((num_rows, num_columns))
 
-for i in range(numRows):
-    for j in range(numRows):
-        count += 1
-        matrixA[i, j] = count
-        matrixB[i, j] = count * 10
+    count = 0
+    for i in range(num_rows):
+        for j in range(num_rows):
+            count += 1
+            matrix_a[i, j] = count
+            matrix_b[i, j] = count * 10
 
+    start = time.time()
+    print("Multiplication started")
 
-def SQUARE_MATRIX_MULTIPLY(matrixA, matrixB):
-    global numOfOperations
-    for i in range(matrixSize):
-        for j in range(matrixSize):
-            matrixC[i][j] = 0
-            for k in range(matrixSize):
-                matrixC[i][j] += matrixA[i][k] * matrixB[k][j]
-                numOfOperations += 1
-    return matrixC
+    result = square_matrix_linear_multiplication(matrix_a, matrix_b)
 
+    print("Multiplication finished")
+    elapsed = time.time() - start
 
-print("Multiplication started")
-
-SQUARE_MATRIX_MULTIPLY(matrixA, matrixB)
-
-print("Multiplication finished")
-print(matrixA)
-print(matrixB)
-print(matrixC)
-print("Number of operations: ", numOfOperations)
+    print(f"Elapsed time: {elapsed} seconds")
