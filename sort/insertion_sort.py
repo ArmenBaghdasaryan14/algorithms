@@ -2,6 +2,7 @@
 # ----- Sorting Algorithm by Insertion Method ---------- #
 # ----- Approximate number of iterations 0.25*n*n ------ #
 # ------------------------------------------------------ #
+
 import time
 import copy
 import random

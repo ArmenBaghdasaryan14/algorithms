@@ -2,6 +2,7 @@
 # ----- Sorting Algorithm by Merge Sort  ------------------------ #
 # ----- Approximate number of operations:  1.0056*n*log(2,n) ---- #
 # --------------------------------------------------------------- #
+
 import sys
 import time
 import random
